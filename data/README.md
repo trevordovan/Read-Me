@@ -43,6 +43,21 @@ Ubuntu Server 22.04.03 LTS
 
 # Services
 
+## Docker
+
+**To list currently running containers**:
+```
+docker ps
+```
+**List all docker containers (running and stopped)**:
+```
+docker ps --all
+```
+**View resource usage stats**:
+```
+docker container stats
+```
+
 ## Homer
 A home server dashboard.  
 Runs in a docker container. Setup using docker-compose.
