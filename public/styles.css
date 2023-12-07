@@ -105,15 +105,19 @@ li {
     justify-content: center;
     align-items: center;
 }
+
 /* Container for the file list */
 .md-file-list-container {
     width: 40vh;
     max-width: 80%;
-    margin-left: auto;
-    margin-right: auto;
+
     padding: 20px;
     height: max-content;
     box-sizing: border-box;
+}
+
+.md-file-list {
+    padding: 0;
 }
 
 /* Style for each file item */
@@ -122,23 +126,24 @@ li {
     border: 1px solid #ccc; 
     border-radius: 3px;
     padding: 10px;
-    margin-bottom: 10px; /* Space between items */
-    list-style-type: none; /* Remove default list styling */
-    transition: background-color 0.3s; /* Smooth transition for hover effect */
+    margin-left: 0px;
+    margin-bottom: 10px;
+    list-style-type: none; 
+    transition: background-color 0.3s; 
 
     display: block;
 }
 
 /* Hover effect */
 .md-file-item:hover {
-    background-color: hsl(215,24%,14%); /* Change as per your color preference */
+    background-color: hsl(215,24%,14%);
 }
 
 /* Style for the links */
 .md-file-item a {
     text-decoration: none;
     color: #e5edf2;
-    display: block; /* Makes the entire item clickable */
+    display: block; 
 }
 
 .data-not-found {
