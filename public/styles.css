@@ -1,4 +1,4 @@
-/* style.css */
+/* styles.css */
 
 @font-face {
     font-family: 'Monaco';
@@ -7,6 +7,7 @@
     src: local('Monaco'), url('/public/Monaco.woff') format('woff');
     }
 
+/* Globals */
 body {
     font-family: Roboto, -apple-system, BlinkMacSystemFont, 
                  Segoe UI, Oxygen, Ubuntu, Cantarell, 
@@ -22,6 +23,12 @@ body {
 
     padding: 20px;
     line-height: 1.6;
+}
+
+@media (max-width:768px) {
+    body {
+        width: 100%;
+    }
 }
 
 code, pre {
@@ -87,3 +94,57 @@ li {
 .octicon-copy {
     fill: #586069;
 }
+
+/* List */
+/* Main Container for list page */
+.list-page {
+    height: 80vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+/* Container for the file list */
+.md-file-list-container {
+    width: 40vh;
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    height: max-content;
+    box-sizing: border-box;
+}
+
+/* Style for each file item */
+.md-file-item {
+    background-color: transparent;
+    border: 1px solid #ccc; 
+    border-radius: 3px;
+    padding: 10px;
+    margin-bottom: 10px; /* Space between items */
+    list-style-type: none; /* Remove default list styling */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+
+    display: block;
+}
+
+/* Hover effect */
+.md-file-item:hover {
+    background-color: hsl(215,24%,14%); /* Change as per your color preference */
+}
+
+/* Style for the links */
+.md-file-item a {
+    text-decoration: none;
+    color: #e5edf2;
+    display: block; /* Makes the entire item clickable */
+}
+
+.data-not-found {
+    height: 80vh; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+

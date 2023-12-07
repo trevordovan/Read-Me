@@ -1,9 +1,31 @@
 const fs = require('fs');
+const path = require('path');
 const markdownIt = require('markdown-it');
 const markdownItAnchor = require('markdown-it-anchor');
+
 const md = markdownIt().use(markdownItAnchor, { permalink: false });
 
-exports.renderMarkdownToHtml = (filePath, callback) => {
+exports.getMdFileList = (directory, callback) => {
+    // Check if the directory exists
+    fs.access(directory, fs.constants.F_OK, (err) => {
+        if (err) {
+            // Directory does not exist or no permission to access
+            callback(new Error('Data directory does not exist or cannot be accessed.'), null);
+        } else {
+            // Directory exists, proceed to read files
+            fs.readdir(directory, (err, files) => {
+                if (err) {
+                    callback(err, null);
+                } else {
+                    const mdFiles = files.filter(file => file.endsWith('.md'));
+                    callback(null, mdFiles);
+                }
+            });
+        }
+    });
+};
+
+exports.mdToHtml = (filePath, callback) => {
     fs.readFile(filePath, 'utf8', function (err, data) {
         if (err) {
             callback(err, null);
@@ -12,8 +34,9 @@ exports.renderMarkdownToHtml = (filePath, callback) => {
                 <!DOCTYPE html>
                 <html>
                 <head>
-                    <link rel="stylesheet" type="text/css" href="custom.css">
-                    <script src="codeBlock.js"></script>
+                    <title>Markdown Rendering Server</title>
+                    <link rel="stylesheet" type="text/css" href="/styles.css">
+                    <script src="/codeBlock.js"></script>
                 </head>
                 <body>
                     ${md.render(data)}
