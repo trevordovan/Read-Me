@@ -17,4 +17,4 @@ COPY . .
 EXPOSE 8083
 
 # Run app when the container launches
-CMD ["node", "server.js"]
+CMD ["node", "src/app.js"]

@@ -5,5 +5,5 @@ services:
     ports:
       - "8083:8083"
     # Include volumes only if you have specific files or directories to persist
-    # volumes:
-    #   - ./path-to-local-dir:/path-in-container
+    volumes:
+      - ./data:/usr/src/app/data
