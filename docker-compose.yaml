@@ -1,0 +1,10 @@
+version: '3'
+services:
+  web:
+    image: nginx:latest
+    ports:
+      - "8082:8082"
+    volumes:
+      - ./data:/usr/share/nginx/html
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+
