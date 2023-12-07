@@ -4,6 +4,6 @@ services:
     build: .
     ports:
       - "8083:8083"
-    volumes:
-      - ./data:/data
-
+    # Include volumes only if you have specific files or directories to persist
+    # volumes:
+    #   - ./path-to-local-dir:/path-in-container
