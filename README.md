@@ -1,7 +1,7 @@
 # Read Me: A Markdown Rendering Server
 
 ## Overview
-This web application serves as a Markdown renderer. It reads a Markdown files (like README.md), converts them to HTML using `markdown-it`, and serves through an Express.js server. There is also additional JavaScript functionality to enhance the rendered Markdown, such as adding copy buttons to code blocks.
+This web application serves as a Markdown renderer. It reads Markdown files (like README.md), converts them to HTML using `markdown-it`, and serves through an Express.js server. There is also additional JavaScript functionality to enhance the rendered Markdown, such as adding copy buttons to code blocks.
 
 ### Default Port
 The default port is `8083`. To change this modify `port` in `/config.js`.
