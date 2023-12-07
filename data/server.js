@@ -9,6 +9,14 @@ const md = markdownIt()
     permalink: false, // Disable automatic permalink generation
   });
 
+const cors = require('cors');
+var corsOptions = {
+	origin: 'http://192.168.1.206:8080',
+	optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+}
+
+app.use(cors(corsOptions));
+
 const port = 8083;
 
 // Serve static files from the "public" directory
