@@ -207,7 +207,8 @@ Refer to: https://mullvad.net/en/help/install-mullvad-app-linux
 ```
 sudo curl -fsSLo /usr/share/keyrings/mullvad-keyring.asc https://repository.mullvad.net/deb/mullvad-keyring.asc
 
-echo "deb [signed-by=/usr/share/keyrings/mullvad-keyring.asc arch=$( dpkg --print-architecture )] https://repository.mullvad.net/deb/stable $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/mullvad.list
+echo "deb [signed-by=/usr/share/keyrings/mullvad-keyring.asc arch=$( dpkg --print-architecture )]  
+https://repository.mullvad.net/deb/stable $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/mullvad.list
 
 sudo apt update
 sudo apt install mullvad-vpn
@@ -254,7 +255,8 @@ mullvad lockdown-mode set off
 mullvad split-tunnel add <pid>
 mullvad split-tunnel list
 mullvad split-tunnel delete <pid>
-
+```
+```
 # Example:
 
 user@home-server:~$ ps aux | grep plex
@@ -262,5 +264,6 @@ plex      695846  2.3  2.0 156396 40400 ?        Ssl  18:49   6:01 /usr/lib/plex
 user@home-server:~$ mullvad split-tunnel add 695846 
 Excluding process
 ```
+
 
 
