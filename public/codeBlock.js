@@ -25,13 +25,27 @@ window.onload = function() {
         // Append SVG to button
         button.appendChild(svg);
 
-        // Wrap code block and button in a container
+        // Wrap code block in a 'code-block' container
+        const codeBlockContainer = document.createElement('div');
+        codeBlockContainer.className = 'code-block';
+
+        // Take the block out of its current parent (pre) and put it in the new container
+        const parent = block.parentNode;
+        parent.replaceChild(codeBlockContainer, block);
+        codeBlockContainer.appendChild(block);
+
+        // Create a container for the button
+        const buttonContainer = document.createElement('div');
+        buttonContainer.className = 'copy-button-container';
+        buttonContainer.appendChild(button);
+
+        // Wrap code block container and button container in a 'code-container' container
         const container = document.createElement('div');
         container.className = 'code-container';
-        block.parentNode.insertBefore(container, block);
-        container.appendChild(block);
-        container.appendChild(button);
-
+        parent.insertBefore(container, codeBlockContainer);
+        container.appendChild(codeBlockContainer);
+        container.appendChild(buttonContainer);
+ 
         // Copy to clipboard functionality
         button.addEventListener('click', () => {
             navigator.clipboard.writeText(block.innerText).then(() => {
