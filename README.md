@@ -18,6 +18,7 @@ Clone the repository to your local machine using `git clone [repository-url]`, o
 
 ## Install Dependencies
 Navigate to the root directory.  
+  
 Run `npm install` to install the necessary Node.js modules.
 
 ## Usage
