@@ -7,7 +7,9 @@ const config = require('../config');
 
 function startServer() {
     const app = express();
-    app.use(cors(config.corsOptions));
+    if (config.corsOptions) {
+        app.use(cors(config.corsOptions));
+    }
     app.use(express.static(path.join(__dirname, '../public')));
     app.use('/', router);
 
