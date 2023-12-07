@@ -18,7 +18,14 @@ Run `npm install` to install the necessary Node.js modules.
 
 ## Usage
 Place a file: `README.md` in the data directoy.  
+  
 Navigate to the src directory and run 
 ```
 node app.js
+```
+
+### Docker
+Navigate to the root directoy and run
+```
+docker-compose up -d
 ```
