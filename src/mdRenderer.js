@@ -35,6 +35,7 @@ exports.mdToHtml = (filePath, callback) => {
                 <html>
                 <head>
                     <title>Markdown Rendering Server</title>
+                    <meta name="viewport" content="width=device-width, initial-scale=1">
                     <link rel="stylesheet" type="text/css" href="/styles.css">
                     <script src="/codeBlock.js"></script>
                 </head>
