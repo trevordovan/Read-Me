@@ -52,6 +52,7 @@ function renderMdList(files) {
         <html>
         <head>
             <title>Markdown Rendering Server</title>
+            <meta name="viewport" content="width=device-width, initial-scale=1">
             <link rel="stylesheet" type="text/css" href="/styles.css">
         </head>
         <body>
@@ -73,6 +74,7 @@ function renderDataNotFound() {
         <html>
         <head>
             <title>Error </title>
+            <meta name="viewport" content="width=device-width, initial-scale=1">
             <link rel="stylesheet" type="text/css" href="/styles.css">
         </head>
         <body>
@@ -92,6 +94,7 @@ function renderDataEmpty() {
         <html>
         <head>
             <title>Error </title>
+            <meta name="viewport" content="width=device-width, initial-scale=1">
             <link rel="stylesheet" type="text/css" href="/styles.css">
         </head>
         <body>
@@ -111,6 +114,7 @@ function renderMdError() {
         <html>
         <head>
             <title>Error </title>
+            <meta name="viewport" content="width=device-width, initial-scale=1">
             <link rel="stylesheet" type="text/css" href="/styles.css">
         </head>
         <body>
