@@ -7,3 +7,4 @@ services:
     # Include volumes only if you have specific files or directories to persist
     volumes:
       - ./data:/usr/src/app/data
+    restart: unless-stopped
