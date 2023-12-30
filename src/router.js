@@ -41,11 +41,14 @@ function renderMd(res, filePath) {
 
 /* List Page */
 function renderMdList(files) {
-    const fileListItems = files.map(file => `
-        <li class="md-file-item">
-            <a href="/file/${file}">${file}</a>
-        </li>
-    `).join('');
+    const fileListItems = files.map(file => {
+        const fileNameWithoutExtension = file.replace(/\.md$/, ''); // Replace '.md' at the end of the string with an empty string
+        return `
+            <li class="md-file-item">
+                <a href="/file/${file}">${fileNameWithoutExtension}</a>
+            </li>
+        `;
+    }).join('');
 
     return `
         <!DOCTYPE html>
