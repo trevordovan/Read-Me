@@ -2,6 +2,7 @@ version: '3'
 services:
   web:
     build: .
+    container_name: readme
     ports:
       - "8083:8083"
     # Include volumes only if you have specific files or directories to persist
