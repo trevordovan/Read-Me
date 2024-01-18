@@ -1,0 +1,16 @@
+{
+    "short_name": "Readme",
+    "name": "Read Me",
+    "icons": [
+      {
+        "src": "logo.png",
+        "type": "image/png",
+        "sizes": "512x512"
+      }
+    ],
+    "start_url": ".",
+    "display": "standalone",
+    "theme_color": "#0e1117",
+    "background_color": "#ffffff",
+    "apple-mobile-web-app-status-bar-style": "black"
+  }

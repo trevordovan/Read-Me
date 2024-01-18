@@ -41,11 +41,14 @@ function renderMd(res, filePath) {
 
 /* List Page */
 function renderMdList(files) {
-    const fileListItems = files.map(file => `
-        <li class="md-file-item">
-            <a href="/file/${file}">${file}</a>
-        </li>
-    `).join('');
+    const fileListItems = files.map(file => {
+        const fileNameWithoutExtension = file.replace(/\.md$/, ''); // Replace '.md' at the end of the string with an empty string
+        return `
+            <li class="md-file-item">
+                <a href="/file/${file}">${fileNameWithoutExtension}</a>
+            </li>
+        `;
+    }).join('');
 
     return `
         <!DOCTYPE html>
@@ -53,6 +56,7 @@ function renderMdList(files) {
         <head>
             <title>Markdown Rendering Server</title>
             <meta name="viewport" content="width=device-width, initial-scale=1">
+            <link rel="manifest" href="/manifest.json">
             <link rel="stylesheet" type="text/css" href="/styles.css">
         </head>
         <body>
@@ -75,6 +79,7 @@ function renderDataNotFound() {
         <head>
             <title>Error </title>
             <meta name="viewport" content="width=device-width, initial-scale=1">
+            <link rel="manifest" href="/manifest.json">
             <link rel="stylesheet" type="text/css" href="/styles.css">
         </head>
         <body>
@@ -95,6 +100,7 @@ function renderDataEmpty() {
         <head>
             <title>Error </title>
             <meta name="viewport" content="width=device-width, initial-scale=1">
+            <link rel="manifest" href="/manifest.json">
             <link rel="stylesheet" type="text/css" href="/styles.css">
         </head>
         <body>
@@ -115,6 +121,7 @@ function renderMdError() {
         <head>
             <title>Error </title>
             <meta name="viewport" content="width=device-width, initial-scale=1">
+            <link rel="manifest" href="/manifest.json">
             <link rel="stylesheet" type="text/css" href="/styles.css">
         </head>
         <body>
