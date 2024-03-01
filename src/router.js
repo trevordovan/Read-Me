@@ -1,13 +1,13 @@
 import { fileURLToPath } from 'url';
 import path from 'path';
 import express from 'express';
-const router = express.Router();
 
 import * as mdRenderer from './mdRenderer.js';
 import { Home, DataNotFound, DataEmpty, MdError, Error404 } from './pages/index.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const dataDir = path.join(__dirname, '../data');
+const router = express.Router();
 
 router.get('/', (req, res) => {
     mdRenderer.getMdFileList(dataDir, (err, files) => {
@@ -32,7 +32,7 @@ router.get('/file/:filename', (req, res) => {
 });
 
 /* Render a Markdown page. See mdToHtml */
-export function renderMd(res, filePath) {
+function renderMd(res, filePath) {
     console.log(filePath)
     mdRenderer.mdToHtml(filePath, (err, html) => {
         if (err) {
