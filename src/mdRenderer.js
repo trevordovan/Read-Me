@@ -1,11 +1,10 @@
-const fs = require('fs');
-const path = require('path');
-const markdownIt = require('markdown-it');
-const markdownItAnchor = require('markdown-it-anchor');
+import fs from 'fs';
+import markdownIt from 'markdown-it';
+import markdownItAnchor from 'markdown-it-anchor';
 
 const md = markdownIt().use(markdownItAnchor, { permalink: false });
 
-exports.getMdFileList = (directory, callback) => {
+export function getMdFileList(directory, callback) {
     // Check if the directory exists
     fs.access(directory, fs.constants.F_OK, (err) => {
         if (err) {
@@ -18,6 +17,7 @@ exports.getMdFileList = (directory, callback) => {
                     callback(err, null);
                 } else {
                     const mdFiles = files.filter(file => file.endsWith('.md'));
+                    console.log(mdFiles)
                     callback(null, mdFiles);
                 }
             });
@@ -25,7 +25,7 @@ exports.getMdFileList = (directory, callback) => {
     });
 };
 
-exports.mdToHtml = (filePath, callback) => {
+export function mdToHtml(filePath, callback){
     fs.readFile(filePath, 'utf8', function (err, data) {
         if (err) {
             callback(err, null);
@@ -41,7 +41,10 @@ exports.mdToHtml = (filePath, callback) => {
                     <script src="/codeBlock.js"></script>
                 </head>
                 <body>
-                    ${md.render(data)}
+                    <a class="homeButton" href="/">Home</a>
+                    <div class="mdContainer">
+                        ${md.render(data)}
+                    </div>
                 </body>
                 </html>
             `;

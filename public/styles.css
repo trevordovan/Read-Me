@@ -16,7 +16,7 @@ body {
     background-color: hsl(215,24%,7%);
     color: #e5edf2 ;
 
-    width: 65%;
+    width: 100%;
     margin-left: auto;
     margin-right: auto;
     box-sizing: border-box;
@@ -25,9 +25,36 @@ body {
     line-height: 1.6;
 }
 
-@media (max-width:768px) {
-    body {
+.mdContainer {
+    background-color: hsl(215,24%,7%);
+    color: #e5edf2 ;
+
+    width: 65%;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+
+    padding: 20px;
+    line-height: 1.6;
+
+    @media (max-width:768px) {
         width: 100%;
+    }
+}
+
+.homeButton {
+    position: absolute;
+    background-color: grey;
+    color: white;
+    padding: 0.5rem;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+
+    @media (max-width:768px) {
+        position: relative;
+        display: flex;
+        justify-content: center;
     }
 }
 

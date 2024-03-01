@@ -1,15 +1,18 @@
-const express = require('express');
-const path = require('path');
-const cors = require('cors');
+import express from 'express';
+import path from 'path';
+import cors from 'cors';
+import { fileURLToPath } from 'url';
 
-const router = require('./router');
-const config = require('../config');
+import router from './router.js';
+import config from '../config.js';
 
-function startServer() {
+export default function startServer() {
     const app = express();
     if (config.corsOptions) {
         app.use(cors(config.corsOptions));
     }
+    
+    const __dirname = path.dirname(fileURLToPath(import.meta.url));
     app.use(express.static(path.join(__dirname, '../public')));
     app.use('/', router);
 
@@ -19,5 +22,3 @@ function startServer() {
 
     return app;
 }
-
-module.exports = startServer;
