@@ -6,7 +6,7 @@ import { fileURLToPath } from 'url';
 import router from './router.js';
 import config from '../config.js';
 
-export default function startServer() {
+export function startServer() {
     const app = express();
     if (config.corsOptions) {
         app.use(cors(config.corsOptions));
