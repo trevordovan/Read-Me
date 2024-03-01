@@ -17,7 +17,6 @@ export function getMdFileList(directory, callback) {
                     callback(err, null);
                 } else {
                     const mdFiles = files.filter(file => file.endsWith('.md'));
-                    console.log(mdFiles)
                     callback(null, mdFiles);
                 }
             });

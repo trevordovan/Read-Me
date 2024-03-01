@@ -33,7 +33,6 @@ router.get('/file/:filename', (req, res) => {
 
 /* Render a Markdown page. See mdToHtml */
 function renderMd(res, filePath) {
-    console.log(filePath)
     mdRenderer.mdToHtml(filePath, (err, html) => {
         if (err) {
             res.status(500).send(MdError());
