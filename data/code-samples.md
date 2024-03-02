@@ -1,3 +1,5 @@
+# Code Samples
+
 ~~~python
 # python
 import time
@@ -18,10 +20,28 @@ for (int i = 0; i < 0; ++i) {
 
 ```java
 // java
-for (Integer i = 0; i < 0; ++i) {
-  Integer a = 0;
+for (int i = 0; i < 0; ++i) {
+  int a = 0;
   String x = "a";
 }
+```
+
+```javascript
+// javascript
+import thing from 'thing'
+import component from 'component.js'
+
+const md = thing({
+  attribute: function (str, key) {
+    if (key && compononent.getValue(key)) {
+      try {
+        return component.compute(str, { key: key }).value;
+      } catch (__) {}
+    }
+
+    return ''; // use external default escaping
+  }
+});
 ```
 
 ```bash
