@@ -14,8 +14,10 @@ const Home = (files) => {
         <head>
             <title>Markdown Rendering Server</title>
             <meta name="viewport" content="width=device-width, initial-scale=1">
-            <link rel="manifest" href="/manifest.json">
+            <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+            <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
             <link rel="stylesheet" type="text/css" href="/styles.css">
+            <link rel="manifest" href="/manifest.json">
         </head>
         <body>
             <div class="list-page">
