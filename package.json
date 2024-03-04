@@ -2,9 +2,10 @@
   "name": "markdown-renderer",
   "version": "1.0.0",
   "description": "A simple markdown renderer",
-  "main": "server.js",
+  "main": "app.js",
   "scripts": {
-    "start": "node server.js"
+    "dev": "node src/app.js",
+    "start": "node src/app.js --listen"
   },
   "type": "module",
   "dependencies": {
