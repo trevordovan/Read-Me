@@ -1,3 +1,5 @@
 import * as server from './server.js';
 
-server.startServer();
+const args = process.argv.slice(2);
+
+server.startServer(args);

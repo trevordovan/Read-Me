@@ -6,7 +6,7 @@ import { fileURLToPath } from 'url';
 import router from './router.js';
 import config from '../config.js';
 
-export function startServer() {
+export function startServer(args) {
     const app = express();
     if (config.corsOptions) {
         app.use(cors(config.corsOptions));
@@ -16,8 +16,13 @@ export function startServer() {
     app.use(express.static(path.join(__dirname, '../public')));
     app.use('/', router);
 
-    app.listen(config.port, '0.0.0.0', () => {
-        console.log(`Server running on http://localhost:${config.port}`);
+    let address = '127.0.0.1'
+    if (args.includes('--listen')) {
+        address = '0.0.0.0';
+    }
+
+    app.listen(config.port, address, () => {
+        console.log(`Server running on http://${address}:${config.port}`);
     });
 
     return app;
